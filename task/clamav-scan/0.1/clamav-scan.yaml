@@ -69,7 +69,7 @@ spec:
         - mountPath: /secrets/registry-auth
           name: registry-auth
     - name: modify-clam-output-to-json
-      image: quay.io/redhat-appstudio/hacbs-test:v1.0.3@sha256:43326f83b9aa7db155508826315ba87043ab6087e17f36c860eda0076230b20c
+      image: quay.io/redhat-appstudio/hacbs-test:v1.0.9@sha256:2cbe93facff681d03ca71d2bf9edab99549906ac9c275979457cd0bca4311ba7
       script: |
         #!/usr/bin/env python3.9
         import json
