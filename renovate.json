@@ -4,7 +4,8 @@
     "config:base"
   ],
   "tekton": {
-      "fileMatch": ["tasks/.*\\.yaml"]
+      "fileMatch": ["\\.yaml$", "\\.yml$"],
+      "includePaths": [".tekton/**", "task/**"]
   },
   "includeForks": true
 }
