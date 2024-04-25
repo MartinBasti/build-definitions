@@ -146,7 +146,7 @@ spec:
     workingDir: $(workspaces.source.path)
 
   - name: sbom-get
-    image: quay.io/redhat-appstudio/syft:v0.47.0
+    image: quay.io/redhat-appstudio/syft:v1.2.0
     script: |
       syft dir:$(workspaces.source.path) --file=$(workspaces.source.path)/sbom-source.json --output=cyclonedx-json
       find $(cat /workspace/container_path) -xtype l -delete
@@ -240,7 +240,7 @@ spec:
     workingDir: $(workspaces.source.path)
 
   - name: upload-sbom
-    image: quay.io/redhat-appstudio/cosign:v1.13.1
+    image: quay.io/redhat-appstudio/cosign:v2.1.1
     args:
       - attach
       - sbom
