@@ -102,7 +102,7 @@ spec:
       name: registry-auth
     workingDir: /gen-source
 
-  - image: quay.io/redhat-appstudio/syft:v0.47.0
+  - image: quay.io/redhat-appstudio/syft:v1.2.0
     name: sbom-get
     script: |
       syft dir:$(workspaces.source.path) --file=$(workspaces.source.path)/sbom-source.json --output=cyclonedx-json
@@ -186,7 +186,7 @@ spec:
     workingDir: $(workspaces.source.path)
 
   - name: upload-sbom
-    image: quay.io/redhat-appstudio/cosign:v1.13.1
+    image: quay.io/redhat-appstudio/cosign:v2.1.1
     args:
       - attach
       - sbom
