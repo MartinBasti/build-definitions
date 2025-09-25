@@ -407,6 +407,22 @@ check_oci_ta_migration() {
     fi
 }
 
+# Check if migrations are not using disallowed mechanisms for updating yaml files
+# like "yq -i" that changes format of yaml
+check_migrations_use_only_pmt() {
+    local migration_file=$1
+
+    if grep -E '(^|[[:blank:]])yq.*[[:blank:]]-[[:alpha:]]*i' "${migration_file}" || \
+       grep -E '(^|[[:blank:]])yq.*[[:blank:]]--inplace' "${migration_file}"
+    then
+        error "Usage of 'yq -i/--inplace' found in ${migration_file}."
+        error "Please use 'pmt modify' for updating YAML files"
+        return 1
+    fi
+
+    return 0
+}
+
 main() {
     if git status --porcelain | grep -qv "^??"; then
         info "There are uncommitted changes. Please commit them and run again."
@@ -450,6 +466,9 @@ main() {
 
         info "check apply pipelines with migrations into a cluster"
         check_apply_in_real_cluster
+
+        info "check if modifications are done with 'pmt modify'"
+        check_migrations_use_only_pmt "$migration_file"
     done
 }
 
