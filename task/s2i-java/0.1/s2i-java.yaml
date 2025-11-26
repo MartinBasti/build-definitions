@@ -119,7 +119,7 @@ spec:
       name: registry-auth
     workingDir: /gen-source
 
-  - image: quay.io/redhat-appstudio/syft:v0.47.0
+  - image: quay.io/redhat-appstudio/syft:v0.105.1
     name: sbom-get
     script: |
       syft dir:$(workspaces.source.path) --file=$(workspaces.source.path)/sbom-source.json --output=cyclonedx-json

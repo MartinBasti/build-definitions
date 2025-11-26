@@ -146,7 +146,7 @@ spec:
     workingDir: $(workspaces.source.path)
 
   - name: sbom-get
-    image: quay.io/redhat-appstudio/syft:v0.47.0
+    image: quay.io/redhat-appstudio/syft:v0.105.1
     script: |
       syft dir:$(workspaces.source.path) --file=$(workspaces.source.path)/sbom-source.json --output=cyclonedx-json
       find $(cat /workspace/container_path) -xtype l -delete

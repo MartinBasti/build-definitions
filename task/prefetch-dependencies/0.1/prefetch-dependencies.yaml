@@ -15,7 +15,7 @@ spec:
   - description: Configures project packages that will have their dependencies prefetched.
     name: input
   steps:
-  - image: quay.io/containerbuildsystem/cachi2@sha256:775909cc2cc62fd8967f974f43c59581a8a67fe7033469c324ea0df38546a55b
+  - image: quay.io/containerbuildsystem/cachi2@sha256:32015beed093d12fe8a002d91f0fc7a94bbafa9754a6780bad099e0456fca47f
     name: prefetch-dependencies
     env:
     - name: INPUT
