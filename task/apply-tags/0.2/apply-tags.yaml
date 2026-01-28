@@ -43,7 +43,7 @@ spec:
         requests:
           cpu: 100m
           memory: 256Mi
-      image: quay.io/konflux-ci/appstudio-utils:latest@sha256:5beab55042923b241f6ce0c653c622c2eefb4fcc46f7e4f04febc499291fcbcd
+      image: quay.io/konflux-ci/appstudio-utils:latest@sha256:4248829c24a80912a61aa4586f7b6be4445ad725444b6a6a9aeff6c635800464
       args:
         - $(params.ADDITIONAL_TAGS[*])
       env:
@@ -71,7 +71,7 @@ spec:
         requests:
           memory: 256Mi
           cpu: 100m
-      image: quay.io/konflux-ci/appstudio-utils:latest@sha256:5beab55042923b241f6ce0c653c622c2eefb4fcc46f7e4f04febc499291fcbcd
+      image: quay.io/konflux-ci/appstudio-utils:latest@sha256:4248829c24a80912a61aa4586f7b6be4445ad725444b6a6a9aeff6c635800464
       env:
       - name: IMAGE_URL
         value: $(params.IMAGE_URL)
