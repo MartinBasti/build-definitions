@@ -1,1 +1,1 @@
-task_bundle: quay.io/konflux-ci/tekton-catalog/task-clamav-scan:0.3@sha256:b0bd59748cda4a7abf311e4f448e6c1d00c6b6d8c0ecc1c2eb33e08dc0e0b802
+task_bundle: quay.io/konflux-ci/tekton-catalog/task-clamav-scan:0.3@sha256:bcf08c20d35988bce353d36b915070a9ab7497e436e8c9d5db27ae9274e3c383

@@ -42,7 +42,7 @@ spec:
 
   steps:
     - name: check-images
-      image: quay.io/konflux-ci/konflux-test:v1.4.39@sha256:2b1e6e5e9b28f17770476039d1c3e68166b61fefcf0d4a6359f30d044b149b65
+      image: quay.io/konflux-ci/konflux-test:v1.4.46@sha256:d20c1060e63dd7fd8fcfb43f1ca715c5ea6309660cdf3abcb2b77708f10899f1
       # per https://kubernetes.io/docs/concepts/containers/images/#imagepullpolicy-defaulting
       # the cluster will set imagePullPolicy to IfNotPresent
       env:

@@ -90,7 +90,7 @@ spec:
         requests:
           cpu: "1"
           memory: 6Gi
-      image: quay.io/konflux-ci/konflux-test:v1.4.39@sha256:89cdc9d251e15d07018548137b4034669df8e9e2b171a188c8b8201d3638cb17
+      image: quay.io/konflux-ci/konflux-test:v1.4.46@sha256:c7e2099ad87d4c65284cba5df8488eae64d16ea0baff344c549ed7ca2415ebce
       # per https://kubernetes.io/docs/concepts/containers/images/#imagepullpolicy-defaulting
       # the cluster will set imagePullPolicy to IfNotPresent
       workingDir: $(workspaces.workspace.path)/hacbs/$(context.task.name)
@@ -344,7 +344,7 @@ spec:
         requests:
           cpu: 100m
           memory: 256Mi
-      image: quay.io/konflux-ci/oras:latest@sha256:4542f5a2a046ca36653749a8985e46744a5d2d36ee10ca14409be718ce15129e
+      image: quay.io/konflux-ci/oras:latest@sha256:a6ebcd58c6eebac8232cdddfdf768bd11f50d6edda29f4be5f5205777ce3bdf1
       workingDir: $(workspaces.workspace.path)/hacbs/$(context.task.name)
       volumeMounts:
         - mountPath: /etc/pki/tls/certs/ca-custom-bundle.crt
