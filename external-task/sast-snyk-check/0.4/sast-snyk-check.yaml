@@ -1,1 +1,1 @@
-task_bundle: quay.io/konflux-ci/tekton-catalog/task-sast-snyk-check:0.4@sha256:25fefacfa0cbf453b8b7b66235f23c98f082f0deb45e064da3e622a4b2e3117f
+task_bundle: quay.io/konflux-ci/tekton-catalog/task-sast-snyk-check:0.4@sha256:fb080927c2638840e7057dca24fd11885e67ff997a48df36f086732087ed3c3f

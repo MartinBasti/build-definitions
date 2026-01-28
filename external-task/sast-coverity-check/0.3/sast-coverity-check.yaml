@@ -1,1 +1,1 @@
-task_bundle: quay.io/konflux-ci/tekton-catalog/task-sast-coverity-check:0.3@sha256:9d572d7f7486224318d59de1b166efa68e59e17bac0785e2ecdcd014fe8e44d5
+task_bundle: quay.io/konflux-ci/tekton-catalog/task-sast-coverity-check:0.3@sha256:8f25c81d6acae0a6c811e29e36499aa0f5beb30635ce393b2c68003ffe8de238
