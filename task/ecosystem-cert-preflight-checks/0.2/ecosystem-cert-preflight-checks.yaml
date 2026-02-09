@@ -162,7 +162,7 @@ spec:
         echo "Introspection concludes that this artifact is of type \"${_ARTIFACT_TYPE}\"."
 
     - name: generate-container-auth
-      image: quay.io/konflux-ci/oras:latest@sha256:4542f5a2a046ca36653749a8985e46744a5d2d36ee10ca14409be718ce15129e
+      image: quay.io/konflux-ci/oras:latest@sha256:64c669a5a51d6340590594f3387a78227f8125846675a9cefb7a58ac6c307172
       env:
       - name: PARAM_IMAGE_URL
         value: $(params.image-url)
@@ -219,7 +219,7 @@ spec:
           mountPath: /bundle
 
     - name: app-check
-      image: quay.io/opdev/preflight:stable@sha256:6e857a015829a53e2139b3f857816c91ff9bf0b37a44d4e473ad92f8b878c1c9
+      image: quay.io/opdev/preflight:stable@sha256:0834c74012598ac7b0b0104deb947d449accd518db745047c98d1ddfcfd8ceaf
       resources:
         limits:
           memory: 4Gi
