@@ -84,7 +84,7 @@ spec:
           readOnly: true
           subPath: ca-bundle.crt
     - name: package-and-push
-      image: quay.io/konflux-ci/tools@sha256:7c2b6eef43e7cda729c9c6546b6df07b5f42371d39e32287a988be1e08d58b9e
+      image: quay.io/konflux-ci/tools@sha256:c677979dbad26c7b95e502ef62548beaf805607b691ba0d26ff488fd394fb215
       workingDir: /var/workdir
       env:
         - name: REPO
