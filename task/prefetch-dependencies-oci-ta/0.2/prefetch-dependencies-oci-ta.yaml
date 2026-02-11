@@ -137,7 +137,7 @@ spec:
         name: workdir
   steps:
     - name: skip-ta
-      image: registry.access.redhat.com/ubi9/ubi-minimal:9.7-1763362218@sha256:61d5ad475048c2e655cd46d0a55dfeaec182cc3faa6348cb85989a7c9e196483
+      image: registry.access.redhat.com/ubi9/ubi-minimal:9.7-1770267347@sha256:759f5f42d9d6ce2a705e290b7fc549e2d2cd39312c4fa345f93c02e4abb8da95
       env:
         - name: INPUT
           value: $(params.input)
@@ -158,7 +158,7 @@ spec:
         - use
         - $(params.SOURCE_ARTIFACT)=/var/workdir/source
     - name: sanitize-config-file-with-yq
-      image: quay.io/konflux-ci/yq:latest@sha256:50530ee1116439dac43f525b1df7d6219d3dc71ce0cd48623ad3517b7ece43b2
+      image: quay.io/konflux-ci/yq:latest@sha256:d4feadf33854f9d9aef4e7deed45ba61d4c69d3fc2a685e82ad8ba12fc8bbae1
       script: |
         if [ -n "${CONFIG_FILE_CONTENT}" ]; then
           # we need to drop 'goproxy_url' for safety reasons until the CLI prefetch tool upstream
@@ -167,7 +167,7 @@ spec:
           yq 'del(.goproxy_url)' <<<"${CONFIG_FILE_CONTENT}" >/mnt/config/config.yaml
         fi
     - name: prefetch-dependencies
-      image: quay.io/konflux-ci/hermeto:0.43.0@sha256:d8c6ced3a79494a8c8afd212cbecaf481b770af4fa5d190de2c2154abd8e72c7
+      image: quay.io/konflux-ci/hermeto:0.46.2@sha256:4d9c1e11b78ba9c170b5b0a7c644d587a9981e88286aba8f38fab0c73508362c
       volumeMounts:
         - mountPath: /mnt/trusted-ca
           name: trusted-ca
