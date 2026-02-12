@@ -39,7 +39,7 @@ spec:
         requests:
           memory: 256Mi
           cpu: 100m
-      image: quay.io/konflux-ci/konflux-test:v1.4.39@sha256:89cdc9d251e15d07018548137b4034669df8e9e2b171a188c8b8201d3638cb17
+      image: quay.io/konflux-ci/konflux-test:v1.4.47@sha256:baa60a08e86ab24476750bc010c29318e62ab4c921f5408f83f176dc10fcc079
       # per https://kubernetes.io/docs/concepts/containers/images/#imagepullpolicy-defaulting
       # the cluster will set imagePullPolicy to IfNotPresent
       volumeMounts:

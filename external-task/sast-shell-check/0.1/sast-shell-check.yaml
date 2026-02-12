@@ -1,1 +1,1 @@
-task_bundle: quay.io/konflux-ci/tekton-catalog/task-sast-shell-check:0.1@sha256:4364876ab45148ddfe729a29de69323e12cddd5a43e85d16f36ad4a88c3794f7
+task_bundle: quay.io/konflux-ci/tekton-catalog/task-sast-shell-check:0.1@sha256:1ce77003bd0e39b68df874d1ce72848ca4614c3d5d1c8ef349b892bca0091673

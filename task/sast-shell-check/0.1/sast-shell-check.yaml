@@ -68,7 +68,7 @@ spec:
         optional: true
   steps:
     - name: sast-shell-check
-      image: quay.io/konflux-ci/konflux-test:v1.4.39@sha256:2b1e6e5e9b28f17770476039d1c3e68166b61fefcf0d4a6359f30d044b149b65
+      image: quay.io/konflux-ci/konflux-test:v1.4.47@sha256:3955d0d874e3cb8a68e71b01bb60c8f1ae195eddc1e4d2702fd2c2c94596b492
       computeResources:
         limits:
           memory: 4Gi
@@ -245,7 +245,7 @@ spec:
         TEST_OUTPUT=$(make_result_json -r SUCCESS -t "$note")
         echo "${TEST_OUTPUT}" | tee "$(results.TEST_OUTPUT.path)"
     - name: upload
-      image: quay.io/konflux-ci/oras:latest@sha256:4542f5a2a046ca36653749a8985e46744a5d2d36ee10ca14409be718ce15129e
+      image: quay.io/konflux-ci/oras:latest@sha256:64c669a5a51d6340590594f3387a78227f8125846675a9cefb7a58ac6c307172
       computeResources:
         limits:
           memory: 256Mi
