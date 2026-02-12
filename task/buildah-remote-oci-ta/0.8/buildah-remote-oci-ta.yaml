@@ -1286,12 +1286,12 @@ spec:
       # detect if keyless signing is required
       SIGNING_CONFIG=$(kubectl get configmap cluster-config -n konflux-info -o json 2>/dev/null || echo '{}')
 
-      # configmap key -> env var mapping
+      # configmap key -> variable name mapping
       declare -A SIGNING_KEY_MAP=(
          [defaultOIDCIssuer]=SIGSTORE_OIDC_ISSUER
-         [rekorInternalUrl]=REKOR_URL
-         [fulcioInternalUrl]=SIGSTORE_FULCIO_URL
-         [tufInternalUrl]=TUF_URL
+         [rekorExternalUrl]=REKOR_URL
+         [fulcioExternalUrl]=SIGSTORE_FULCIO_URL
+         [tufExternalUrl]=TUF_URL
       )
 
       missing=""
@@ -1301,7 +1301,7 @@ spec:
         if [ -z "${val}" ]; then
           missing="${missing:+${missing}, }${key}"
         else
-          export "${SIGNING_KEY_MAP[$key]}=${val}"
+          declare "${SIGNING_KEY_MAP[$key]}=${val}"
           configured=$((configured + 1))
         fi
       done
@@ -1312,7 +1312,7 @@ spec:
         # Save signing config for upload-sbom step
         for key in "${!SIGNING_KEY_MAP[@]}"; do
           envvar="${SIGNING_KEY_MAP[$key]}"
-          echo "export ${envvar}='${!envvar}'"
+          echo "${envvar}='${!envvar}'"
         done >/shared/signing-config.env
 
         echo "Using Rekor URL: ${REKOR_URL}"
@@ -1322,7 +1322,7 @@ spec:
         echo "Initializing TUF root from ${TUF_URL}"
         cosign initialize --root "${TUF_URL}/root.json" --mirror "${TUF_URL}"
 
-        export SIGSTORE_ID_TOKEN_FILE="/var/run/sigstore/cosign/oidc-token"
+        export SIGSTORE_ID_TOKEN="$(cat /var/run/sigstore/cosign/oidc-token)"
 
         IMAGE_REF="$(cat "$(results.IMAGE_REF.path)")"
 
@@ -1332,7 +1332,11 @@ spec:
 
         echo "[$(date --utc -Ins)] Sign image"
         echo "Signing image ${IMAGE_REF} using keyless signing"
-        if ! retry cosign sign -y "${IMAGE_REF}"; then
+        if ! retry cosign sign -y \
+          --rekor-url="${REKOR_URL}" \
+          --fulcio-url="${SIGSTORE_FULCIO_URL}" \
+          --oidc-issuer="${SIGSTORE_OIDC_ISSUER}" \
+          "${IMAGE_REF}"; then
           echo "Failed to sign image" >&2
           exit 1
         fi
@@ -1586,13 +1590,17 @@ spec:
         echo "Initializing TUF root from ${TUF_URL}"
         cosign initialize --root "${TUF_URL}/root.json" --mirror "${TUF_URL}"
 
-        export SIGSTORE_ID_TOKEN_FILE="/var/run/sigstore/cosign/oidc-token"
+        export SIGSTORE_ID_TOKEN="$(cat /var/run/sigstore/cosign/oidc-token)"
 
         IMAGE_REF="$(cat "$(results.IMAGE_REF.path)")"
 
         echo "[$(date --utc -Ins)] Sign SBOM"
         echo "Signing and attaching SBOM to ${IMAGE_REF} using keyless signing"
-        if ! retry cosign attest -y --type "${SBOM_TYPE}" --predicate sbom.json "${IMAGE_REF}"; then
+        if ! retry cosign attest -y --type "${SBOM_TYPE}" --predicate sbom.json \
+          --rekor-url="${REKOR_URL}" \
+          --fulcio-url="${SIGSTORE_FULCIO_URL}" \
+          --oidc-issuer="${SIGSTORE_OIDC_ISSUER}" \
+          "${IMAGE_REF}"; then
           echo "Failed to sign SBOM" >&2
           exit 1
         fi
