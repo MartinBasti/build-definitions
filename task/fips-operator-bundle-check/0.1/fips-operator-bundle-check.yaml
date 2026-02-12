@@ -29,7 +29,7 @@ spec:
       description: Images processed in the task.
   steps:
     - name: get-unique-related-images
-      image: quay.io/konflux-ci/konflux-test:v1.4.41@sha256:afea44d83043be7f528ec2cacaeb0c3b69cdafdd86a1b930957def38400f8a6c
+      image: quay.io/konflux-ci/konflux-test:v1.4.47@sha256:baa60a08e86ab24476750bc010c29318e62ab4c921f5408f83f176dc10fcc079
       computeResources:
         limits:
           memory: 12Gi
@@ -147,7 +147,7 @@ spec:
             value: stepactions/fips-operator-check-step-action/0.1/fips-operator-check-step-action.yaml
 
     - name: parse-images-processed-result
-      image: quay.io/konflux-ci/konflux-test:v1.4.41@sha256:afea44d83043be7f528ec2cacaeb0c3b69cdafdd86a1b930957def38400f8a6c
+      image: quay.io/konflux-ci/konflux-test:v1.4.47@sha256:baa60a08e86ab24476750bc010c29318e62ab4c921f5408f83f176dc10fcc079
       script: |
         #!/usr/bin/env bash
         set -euo pipefail

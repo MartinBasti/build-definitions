@@ -1,1 +1,1 @@
-task_bundle: quay.io/konflux-ci/tekton-catalog/task-sast-unicode-check:0.3@sha256:d72abe93b4714b1b8faaea9fceb9acfaeca29c27eac8ff27ebc87622d75c871f
+task_bundle: quay.io/konflux-ci/tekton-catalog/task-sast-unicode-check:0.3@sha256:c495de4ed59450f32cb0408cca0f58cfa4f1db94cdcc068be5b1d20af5755378
