@@ -183,7 +183,7 @@ spec:
             ' <<<"$sbom" | tee "$BASE_IMAGES_FILE"
         fi
     - name: build
-      image: quay.io/konflux-ci/source-container-build:latest@sha256:ac75e2c1425d77989d0b261d1ada73076c3f90c0ab679ad8de5d2fd932fc620c
+      image: quay.io/konflux-ci/source-container-build:latest@sha256:b60d4b3b68d2026ed0c2c85ca1af8bb38cfa73e44d862b0f96c54bd343dd32fd
       workingDir: /var/workdir
       env:
         - name: SOURCE_DIR
