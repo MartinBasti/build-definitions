@@ -109,7 +109,7 @@ spec:
       requests:
         cpu: 250m
         memory: 512Mi
-    image: quay.io/konflux-ci/buildah-task:latest@sha256:c711eeac025a5f829d5d7bb281d7e0df380969d1e37e5329d0cb7740ff0aa301
+    image: quay.io/konflux-ci/buildah-task:latest@sha256:4c470b5a153c4acd14bf4f8731b5e36c61d7faafe09c2bf376bb81ce84aa5709
     name: build
     script: |
       #!/bin/bash
@@ -271,7 +271,7 @@ spec:
       requests:
         cpu: 100m
         memory: 256Mi
-    image: quay.io/konflux-ci/appstudio-utils:latest@sha256:5beab55042923b241f6ce0c653c622c2eefb4fcc46f7e4f04febc499291fcbcd
+    image: quay.io/konflux-ci/appstudio-utils:latest@sha256:4e76b0af4b51b5c1f57c67b194757bf72ab9dc08d2e8000a5aea9a8eb055ca18
     name: upload-sbom
     script: |
       #!/bin/bash
