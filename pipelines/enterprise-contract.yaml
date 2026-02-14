@@ -120,7 +120,7 @@ spec:
         resolver: bundles
         params:
           - name: bundle
-            value: quay.io/enterprise-contract/tekton-task:latest@sha256:88755b87abb38842824ed2489e7bb78d3d6fb9179ee046ee6e2542e50a5e24e0
+            value: quay.io/enterprise-contract/tekton-task:latest@sha256:9bd29191c2123acd01c95057a11567d7c550b0e6eed7710a628a43a3dc1569a6
           - name: name
             value: verify-enterprise-contract
           - name: kind
