@@ -66,7 +66,7 @@ spec:
         optional: true
   steps:
     - name: sast-unicode-check
-      image: quay.io/konflux-ci/konflux-test:v1.4.39@sha256:89cdc9d251e15d07018548137b4034669df8e9e2b171a188c8b8201d3638cb17
+      image: quay.io/konflux-ci/konflux-test:v1.4.51@sha256:169f73f80fbde8d54f42416c5de8cc9214ecc7e8c89c70a3385285bbac32ad0a
       computeResources:
         limits:
           memory: 4Gi
@@ -263,7 +263,7 @@ spec:
         fi
         echo "${TEST_OUTPUT:-${ERROR_OUTPUT}}" | tee "$(results.TEST_OUTPUT.path)"
     - name: upload
-      image: quay.io/konflux-ci/oras:latest@sha256:4542f5a2a046ca36653749a8985e46744a5d2d36ee10ca14409be718ce15129e
+      image: quay.io/konflux-ci/oras:latest@sha256:180b50c7be50c20e3349a79df8dd6062fee0e0dd01aa30e9a09d1d07d9ebd0c2
       computeResources:
         limits:
           memory: 256Mi

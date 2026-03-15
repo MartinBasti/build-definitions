@@ -1,1 +1,1 @@
-task_bundle: quay.io/konflux-ci/tekton-catalog/task-deprecated-image-check:0.5@sha256:f59175d9a0a60411738228dfe568af4684af4aa5e7e05c832927cb917801d489
+task_bundle: quay.io/konflux-ci/tekton-catalog/task-deprecated-image-check:0.5@sha256:3457a4ca93f8d55f14ebd407532b1223c689eacc34f0abb3003db4111667bdae
