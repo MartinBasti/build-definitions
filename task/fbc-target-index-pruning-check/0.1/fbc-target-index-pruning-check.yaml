@@ -48,7 +48,7 @@ spec:
         name: workdir
   steps:
     - name: pull-rendered-catalog
-      image: quay.io/konflux-ci/oras:latest@sha256:4542f5a2a046ca36653749a8985e46744a5d2d36ee10ca14409be718ce15129e
+      image: quay.io/konflux-ci/oras:latest@sha256:a24785126ef20a631354f3ee0cb1ca3f75f7c7013b778e901a8983f6cc9a8390
       workingDir: /shared
       securityContext:
         runAsUser: 0
