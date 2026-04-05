@@ -147,7 +147,7 @@ spec:
                 echo $? > partner-tasks-code.out
                 cat partner-tasks.out
             - name: create-comment
-              image: registry.access.redhat.com/ubi9/python-39:9.6-1762373664@sha256:8093b0752e9cce0019c0708f55a032c158d70fefe31a2dcb13d179311e356e5e
+              image: registry.access.redhat.com/ubi9/python-39:9.7-1775151669@sha256:409cf465f1d1c5da7c7f3884a27ad4274666d3dd1ad04cc9a434abe16dfe876f
               volumeMounts:
                 - name: infra-deployments-pr-creator
                   mountPath: /secrets/deploy-key
