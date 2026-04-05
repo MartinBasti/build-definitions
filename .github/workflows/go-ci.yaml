@@ -15,7 +15,7 @@ jobs:
           - task-generator/trusted-artifacts
     steps:
       - uses: actions/checkout@v6.0.2
-      - uses: actions/setup-go@v6.3.0
+      - uses: actions/setup-go@v6.4.0
         with:
           go-version-file: './${{matrix.path}}/go.mod'
           cache-dependency-path: ./${{matrix.path}}/go.sum
@@ -35,7 +35,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6.0.2
       - name: Install Go
-        uses: actions/setup-go@v6.3.0
+        uses: actions/setup-go@v6.4.0
         with:
           go-version-file: './${{matrix.path}}/go.mod'
           cache-dependency-path: ./${{matrix.path}}/go.sum
@@ -78,7 +78,7 @@ jobs:
           - task-generator/trusted-artifacts
     steps:
       - uses: actions/checkout@v6.0.2
-      - uses: actions/setup-go@v6.3.0
+      - uses: actions/setup-go@v6.4.0
         with:
           go-version-file: './${{matrix.path}}/go.mod'
           cache-dependency-path: ./${{matrix.path}}/go.sum
