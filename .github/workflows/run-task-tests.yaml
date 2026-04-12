@@ -62,7 +62,7 @@ jobs:
         with:
           repository: 'konflux-ci/konflux-ci'
           path: konflux-ci
-          ref: d3e94a231ef7fa8ec345d619b279e30d3196e18f
+          ref: 738ee422137e3bfb22b02552050ff389fa52f519
 
       - name: Create k8s Kind Cluster
         if: steps.tasks-to-be-tested.outputs.tasklist != ''
