@@ -99,7 +99,7 @@ spec:
           readOnly: true
           subPath: ca-bundle.crt
     - name: package-and-push
-      image: quay.io/konflux-ci/tools@sha256:7c2b6eef43e7cda729c9c6546b6df07b5f42371d39e32287a988be1e08d58b9e
+      image: quay.io/konflux-ci/tools@sha256:b16ce356264345f09819130cb4fab92ed1dbb242d2d543966a62bdb48835c4d2
       workingDir: /var/workdir
       env:
         - name: IMAGE
