@@ -231,7 +231,7 @@ spec:
         add:
           - SETFCAP
 
-  - image: quay.io/konflux-ci/mobster:1.1.0-1762282332@sha256:17d208056137237e0c9619216a93c111b97a3d2214bf7ab7907856c344beac65
+  - image: quay.io/konflux-ci/mobster:1.2.0-1776352559@sha256:3584f2cbcfee9d9eec0c6d34309d6c436a347f303e697f888b7bdf693b515908
     name: create-sbom
     computeResources:
       limits:
