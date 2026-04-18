@@ -1,1 +1,1 @@
-task_bundle: quay.io/konflux-ci/tekton-catalog/task-clair-scan:0.2@sha256:076d5cde62b55bbfcdda2b4782392256bbda5ad38f839013b4330b3aba70a973
+task_bundle: quay.io/konflux-ci/tekton-catalog/task-clair-scan:0.2@sha256:3a39bc7c528ea8c5ec636859bd017de54d29b6ac0b49beaa7410f87e4ef2a1f1
