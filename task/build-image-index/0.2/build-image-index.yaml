@@ -98,7 +98,7 @@ spec:
         mountPath: /mnt/trusted-ca
         readOnly: true
   steps:
-  - image: quay.io/konflux-ci/buildah-task:latest@sha256:c711eeac025a5f829d5d7bb281d7e0df380969d1e37e5329d0cb7740ff0aa301
+  - image: quay.io/konflux-ci/buildah-task:latest@sha256:4c470b5a153c4acd14bf4f8731b5e36c61d7faafe09c2bf376bb81ce84aa5709
     # per https://kubernetes.io/docs/concepts/containers/images/#imagepullpolicy-defaulting
     # the cluster will set imagePullPolicy to IfNotPresent
     name: build
@@ -273,7 +273,7 @@ spec:
       mobster "${mobster_args[@]}"
 
   - name: upload-sbom
-    image: quay.io/konflux-ci/appstudio-utils:latest@sha256:5beab55042923b241f6ce0c653c622c2eefb4fcc46f7e4f04febc499291fcbcd
+    image: quay.io/konflux-ci/appstudio-utils:latest@sha256:14c77f747283543376a778a97b362d30cce0ce1e92631fc7c237be9ac07f5c89
     script: |
       #!/bin/bash
       set -e
