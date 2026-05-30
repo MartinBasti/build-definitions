@@ -137,7 +137,7 @@ spec:
         name: workdir
   steps:
     - name: skip-ta
-      image: registry.access.redhat.com/ubi9/ubi-minimal:9.7-1763362218@sha256:61d5ad475048c2e655cd46d0a55dfeaec182cc3faa6348cb85989a7c9e196483
+      image: registry.access.redhat.com/ubi9/ubi-minimal:9.8-1779809423@sha256:5b74fce9d6e629942a0c6dc0f546c193e70d7f974d999a48c948c53dd3d36362
       env:
         - name: INPUT
           value: $(params.input)
@@ -153,12 +153,12 @@ spec:
           echo -n "" >$(results.CACHI2_ARTIFACT.path)
         fi
     - name: use-trusted-artifact
-      image: quay.io/konflux-ci/build-trusted-artifacts:latest@sha256:15d7dc86012e41b10d1eb37679ec03ee75c96436224fadd0938a49dc537aa4ad
+      image: quay.io/konflux-ci/build-trusted-artifacts:latest@sha256:59d4997c0d4ebfb2a93f52a942cae109b934c3dcac8a5252639ac8418f070783
       args:
         - use
         - $(params.SOURCE_ARTIFACT)=/var/workdir/source
     - name: sanitize-config-file-with-yq
-      image: quay.io/konflux-ci/yq:latest@sha256:50530ee1116439dac43f525b1df7d6219d3dc71ce0cd48623ad3517b7ece43b2
+      image: quay.io/konflux-ci/yq:latest@sha256:58996707d7186ddcd06326353d270ee72e27e8520440578839c1f105a6c53817
       script: |
         if [ -n "${CONFIG_FILE_CONTENT}" ]; then
           # we need to drop 'goproxy_url' for safety reasons until the CLI prefetch tool upstream
@@ -167,7 +167,7 @@ spec:
           yq 'del(.goproxy_url)' <<<"${CONFIG_FILE_CONTENT}" >/mnt/config/config.yaml
         fi
     - name: prefetch-dependencies
-      image: quay.io/konflux-ci/hermeto:0.43.0@sha256:d8c6ced3a79494a8c8afd212cbecaf481b770af4fa5d190de2c2154abd8e72c7
+      image: quay.io/konflux-ci/hermeto:0.52.0@sha256:2d19f2b2e0535e62e1d9ff21723a8d6902ed82652cba5b0fa05f7db9c147dee8
       volumeMounts:
         - mountPath: /mnt/trusted-ca
           name: trusted-ca
@@ -455,7 +455,7 @@ spec:
           cpu: "1"
           memory: 3Gi
     - name: create-trusted-artifact
-      image: quay.io/konflux-ci/build-trusted-artifacts:latest@sha256:15d7dc86012e41b10d1eb37679ec03ee75c96436224fadd0938a49dc537aa4ad
+      image: quay.io/konflux-ci/build-trusted-artifacts:latest@sha256:59d4997c0d4ebfb2a93f52a942cae109b934c3dcac8a5252639ac8418f070783
       args:
         - create
         - --store
