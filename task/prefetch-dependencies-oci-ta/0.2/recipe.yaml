@@ -7,7 +7,7 @@ add:
 additionalSteps:
   - at: 0
     name: skip-ta
-    image: registry.access.redhat.com/ubi9/ubi-minimal:9.7-1763362218@sha256:61d5ad475048c2e655cd46d0a55dfeaec182cc3faa6348cb85989a7c9e196483
+    image: registry.access.redhat.com/ubi9/ubi-minimal:9.8-1779809423@sha256:5b74fce9d6e629942a0c6dc0f546c193e70d7f974d999a48c948c53dd3d36362
     env:
     - name: INPUT
       value: $(params.input)
