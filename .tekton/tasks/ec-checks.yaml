@@ -37,7 +37,7 @@ spec:
       stepactions_dir stepactions-ec
   - name: validate-all-tasks
     workingDir: "$(workspaces.source.path)/source"
-    image: quay.io/enterprise-contract/cli:latest@sha256:39f97c62a9b61e343782fe8d3ff91f8049d0029cf7d90db0340881d48514b871
+    image: quay.io/enterprise-contract/cli:latest@sha256:96cdd0cca8aa858acfbea5d3d7217b8cb6cc35c66b71a6db380d1374cd32022a
     script: |
       set -euo pipefail
 
@@ -51,7 +51,7 @@ spec:
       ec validate input --policy "${policy}" --output yaml --strict=true ${args[*]}
   - name: validate-build-tasks
     workingDir: "$(workspaces.source.path)/source"
-    image: quay.io/enterprise-contract/cli:latest@sha256:39f97c62a9b61e343782fe8d3ff91f8049d0029cf7d90db0340881d48514b871
+    image: quay.io/enterprise-contract/cli:latest@sha256:96cdd0cca8aa858acfbea5d3d7217b8cb6cc35c66b71a6db380d1374cd32022a
     script: |
       set -euo pipefail
 
@@ -65,7 +65,7 @@ spec:
       ec validate input --policy "${policy}" --output yaml --strict=true ${args[*]}
   - name: validate-step-actions
     workingDir: "$(workspaces.source.path)/source"
-    image: quay.io/enterprise-contract/cli:latest@sha256:39f97c62a9b61e343782fe8d3ff91f8049d0029cf7d90db0340881d48514b871
+    image: quay.io/enterprise-contract/cli:latest@sha256:96cdd0cca8aa858acfbea5d3d7217b8cb6cc35c66b71a6db380d1374cd32022a
     script: |
       #!/bin/bash
       set -euo pipefail
